@@ -1,0 +1,83 @@
+<html>
+<body>
+ <div>
+ <h1>Price Prediction of Homes in Mirpur</h1>
+ <form action="{{ url_for('predict_datapoint')}}" method="post">
+ <h1>
+ <legend>Price Prediction of Homes in Mirpur</legend>
+ </h1>
+ <div>
+ <label>property_type</label>
+ <select name="property_type" placeholder="Enter the property_type" required>
+ <option selected disabled value="">Enter the property_type</option>
+ <option value="apartment">Apartment</option>
+ <option value="bungalow/townhouse">Bungalow/Townhouse</option>
+ <option value="commercial">Commercial</option>
+ <option value="building">Building</option>
+ </select>
+ </div>
+ <div>
+ <label>Section</label>
+ <select name="place" placeholder="Enter the section" required>
+ <option selected disabled value="">Select Section</option>
+ <option value="1st colony">1st Colony</option>
+ <option value="2nd colony">2nd Colony</option>
+ <option value="ahmed nagar">ahmed nagar</option>
+ <option value="arambag residential area">arambag residential area</option>
+ <option value="dakkhin paikpara">dakkhin paikpara</option>
+ <option value="darussalam">darussalam</option>
+ <option value="east kazipara">east kazipara</option>
+ <option value="east monipur">east monipur</option>
+ <option value="east shewrapara">East Shewrapara</option>
+ <option value="kachukhet road">Kachukhet Road</option>
+ <option value="kallyanpur">Kallyanpur</option>
+ <option value="lalkuthi">Lalkuthi</option>
+ <option value="middle monipur">Middle Monipur</option>
+ <option value="middle paikpara">Middle Paikpara</option>
+ <option value="mirpur dohs">Mirpur DOHS</option>
+ <option value="paikpara">Paikpara</option>
+ <option value="pallabi">Pallabi</option>
+ <option value="pirerbag">Pirerbag</option>
+ <option value="rupnagar r/a">Rupnagar R/A</option>
+ <option value="section 1">Section 1</option>
+ <option value="section 10">Section 10</option>
+ <option value="section 11">Section 11</option>
+ <option value="section 12">Section 12</option>
+ <option value="section 13">Section 13</option>
+ <option value="section 15">Section 15</option>
+ <option value="section 2">Section 2</option>
+ <option value="section 6">Section 6</option>
+ <option value="section 7">Section 7</option>
+ <option value="south monipur">South Monipur</option>
+ <option value="west kazipara">West Kazipara</option>
+ <option value="west monipur">West Monipur</option>
+ <option value="west shewrapara">West Shewrapara</option>
+ </select>
+ </div>
+ <label>No of Bedrooms</label>
+ <input type="number" name="bedrooms"
+ placeholder="Enter No of Bedrooms" min='0' max='100' />
+ </div>
+ <div>
+ <label>No of Bathrooms</label>
+ <input type="number" name="bathrooms"
+ placeholder="Enter No of Bathrooms" min='0' max='100' />
+ </div>
+ <div>
+ <label>Area in sqft:</label>
+ <input type="number" name="area"
+ placeholder="Enter floor area in sqft" min='0' max='10000' />
+ </div>
+ <div>
+ <label>Floor No.</label>
+ <input type="floor" name="floor"
+ placeholder="Enter Floor no." min='0' max='100' />
+ </div>
+ <div>
+ <input type="submit" value="Predict your home price" required />
+ </div>
+ </form>
+ <h2>
+ THE prediction is {{results}}
+ </h2>
+ 
